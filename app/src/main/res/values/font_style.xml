@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="customButtonFontStyle" parent="@style/Widget.AppCompat.Button">
+        <item name="android:fontFamily">@font/the하루일기</item>
+    </style>
+
+    <style name="customTextViewFontStyle" parent="@style/Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/the하루일기</item>
+    </style>
+
+    <style name="customEditTextFontStyle" parent="@style/Widget.AppCompat.EditText">
+        <item name="android:fontFamily">@font/the하루일기</item>
+    </style>
+
+</resources>
