@@ -5,20 +5,20 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageButton
 
-class MainActivity : AppCompatActivity() {
-    
-    lateinit var todoBtn: ImageButton
+class todoActivity : AppCompatActivity() {
+
+    lateinit var homeBtn: ImageButton
     lateinit var newsBtn: ImageButton
-    
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        
-        todoBtn = findViewById(R.id.todoButton)
+        setContentView(R.layout.activity_to_do)
+
+        homeBtn = findViewById(R.id.homeButton)
         newsBtn = findViewById(R.id.newsButton)
-        
-        todoBtn.setOnClickListener{
-            var intent = Intent(this, todoActivity::class.java)
+
+        homeBtn.setOnClickListener{
+            var intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
 
@@ -27,6 +27,4 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
-    
-
 }
