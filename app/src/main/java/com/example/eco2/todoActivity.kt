@@ -1,5 +1,6 @@
 package com.example.eco2
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -16,9 +17,9 @@ class todoActivity : AppCompatActivity() {
 
     lateinit var listBtn: Button
     lateinit var dateText: TextView
+    lateinit var initialText: TextView
 
     lateinit var simpleDateFormat: SimpleDateFormat
-    lateinit var date: Date
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,11 +31,16 @@ class todoActivity : AppCompatActivity() {
         listBtn = findViewById(R.id.listButton)
         dateText = findViewById(R.id.dateText)
 
-        val now: Long = System.currentTimeMillis()
-        date = Date(now)
-        simpleDateFormat = SimpleDateFormat("yyyy. MM. dd (E)") //형식 지정
-        val getDate: String = simpleDateFormat.format(date)
-        dateText.setText(getDate)
+        var calendar: Calendar = Calendar.getInstance()
+        simpleDateFormat = SimpleDateFormat("yyyy. MM. dd(E)") //형식 지정
+        var date: String = simpleDateFormat.format(calendar.getTime())
+        dateText.setText(date)
+
+        //목록 추가 버튼
+        listBtn.setOnClickListener{
+            var intent = Intent(this, listActivity::class.java)
+            startActivity(intent)
+        }
 
         //홈 화면 연결
         homeBtn.setOnClickListener{
@@ -46,7 +52,5 @@ class todoActivity : AppCompatActivity() {
             var intent = Intent(this, newsActivity::class.java)
             startActivity(intent)
         }
-
-
     }
 }
