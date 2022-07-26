@@ -30,6 +30,7 @@ class newsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_news)
 
+
         homeBtn = findViewById(R.id.homeButton)
         todoBtn = findViewById(R.id.todoButton)
         refreshBtn = findViewById(R.id.refreshBtn)
