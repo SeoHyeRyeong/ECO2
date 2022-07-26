@@ -38,6 +38,7 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.4.2'
     implementation 'com.google.android.material:material:1.6.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    //Jsoup
     implementation files('../.idea/libraries/jsoup-1.15.2.jar')
     implementation files('../.idea/libraries/jsoup-1.15.2.jar')
     testImplementation 'junit:junit:4.13.2'
@@ -46,8 +47,6 @@ dependencies {
    //추가
     implementation 'com.squareup.okhttp3:okhttp:3.9.0'
     implementation 'com.google.code.gson:gson:2.8.2'
-    //Jsoup
-//    implementation 'org.jsoup:jsoup:1.13.1'
     implementation ("com.github.bumptech.glide:glide:4.11.0")
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
     implementation 'androidx.recyclerview:recyclerview:1.1.0'

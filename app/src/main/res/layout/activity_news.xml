@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".newsActivity">
 
+
     <ImageButton
         android:id="@+id/todoButton"
         android:layout_width="70dp"
@@ -57,7 +58,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/re"
+        app:srcCompat="@drawable/refresh"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <androidx.recyclerview.widget.RecyclerView
