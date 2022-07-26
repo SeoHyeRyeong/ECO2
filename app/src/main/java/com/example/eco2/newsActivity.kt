@@ -22,7 +22,6 @@ class newsActivity : AppCompatActivity() {
     lateinit var todoBtn: ImageButton
     lateinit var refreshBtn: ImageButton
 
-
     lateinit var recyclerView:RecyclerView
 
     var items : ArrayList<Item> = arrayListOf()
