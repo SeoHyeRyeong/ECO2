@@ -15,6 +15,7 @@ class todoActivity : AppCompatActivity() {
     lateinit var homeBtn: ImageButton
     lateinit var newsBtn: ImageButton
 
+
     lateinit var listBtn: Button
     lateinit var dateText: TextView
     lateinit var initialText: TextView
