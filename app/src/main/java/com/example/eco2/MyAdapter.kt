@@ -16,7 +16,6 @@ import com.bumptech.glide.Glide
 class MyAdapter(val items: ArrayList<newsActivity.Item>, context: Context) : RecyclerView.Adapter<MyAdapter.ViewHolder>() {
 
 
-
     //뷰홀더
     inner class ViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
 

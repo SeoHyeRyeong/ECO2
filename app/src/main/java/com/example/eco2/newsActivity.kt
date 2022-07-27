@@ -81,6 +81,4 @@ class newsActivity : AppCompatActivity() {
     //테이터 객체(제목/기사링크/썸네일이미지)
     data class Item(val title: String, val link: String, val thumb: String, val summary: String)
 
-    val clientId = "zVorJaB67x3RJ1fWnllZ"
-    val clientSecret = "7jJ1jkb5pA"
 }
