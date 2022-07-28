@@ -53,9 +53,9 @@ class newsActivity : AppCompatActivity() {
             Thread(Runnable {
                 val url  = "https://news.naver.com/main/list.naver?mode=LS2D&mid=shm&sid1=102&sid2=252"
                 val doc = Jsoup.connect(url).get()
-                val today = doc.getElementsByAttributeValue("class","list_body newsflash_body")
+                val elements = doc.getElementsByAttributeValue("class","list_body newsflash_body")
 
-                today.forEach { item ->
+                elements.forEach { item ->
                     val item_link = item.select("a").attr("href")
                     val item_title = item.select("img").attr("alt")
                     val item_thumb = item.select("img").attr("src")
@@ -72,7 +72,7 @@ class newsActivity : AppCompatActivity() {
                     var adapter = MyAdapter(items, this)
                     recyclerView.adapter = adapter
                 })
-            }).start()
+        }).start()
     }
 
     }

@@ -36,7 +36,6 @@ class MyAdapter(val items: ArrayList<newsActivity.Item>, context: Context) : Rec
     }
 
     //position번째 데이터와 xml 연결
-    //질문- 왜
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.tv_title?.text = items.get(position).title
         val into = Glide.with(holder.view.context)
