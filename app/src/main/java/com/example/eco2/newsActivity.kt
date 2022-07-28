@@ -8,18 +8,19 @@ import android.widget.ImageButton
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import org.jsoup.Jsoup
+import org.jsoup.select.Elements
+import org.jsoup.nodes.Document
+import org.w3c.dom.Element
+
 import java.util.*
-import java.io.*;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.net.URLEncoder;
 import java.io.IOException
 
 class newsActivity : AppCompatActivity() {
 
     lateinit var homeBtn: ImageButton
     lateinit var todoBtn: ImageButton
+    lateinit var newsBtn:ImageButton
+
     lateinit var refreshBtn: ImageButton
 
     lateinit var recyclerView:RecyclerView
@@ -34,6 +35,7 @@ class newsActivity : AppCompatActivity() {
         homeBtn = findViewById(R.id.homeButton)
         todoBtn = findViewById(R.id.todoButton)
         refreshBtn = findViewById(R.id.refreshBtn)
+        newsBtn = findViewById(R.id.newsButton)
 
         recyclerView = findViewById(R.id.recyclerView)
 
@@ -47,37 +49,36 @@ class newsActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-
         refreshBtn.setOnClickListener {
             Thread(Runnable {
-                val url = "https://sports.news.naver.com/index.nhn"
-                val base_url = "https://sports.news.naver.com/"
+                val url  = "https://news.naver.com/main/list.naver?mode=LS2D&mid=shm&sid1=102&sid2=252"
                 val doc = Jsoup.connect(url).get()
-                val title = doc.title()
-                //val links = doc.select("a[href]")
-                //필요한 자료만 - 오늘의 스포츠 NoW 목록을 가져오자. HTML  태그등을 분석해서 무엇을 가져 올지 결정해야 한다.
-                val today = doc.select("ul.today_list li.today_item")
+                val today = doc.getElementsByAttributeValue("class","list_body newsflash_body")
 
                 today.forEach { item ->
-                    val item_link = base_url + item.select("a").attr("href")
-                    val item_title = item.select("strong.title").text()
+                    val item_link = /*base_url +*/item.select("a").attr("href")
+                    val item_title = item.select("img").attr("alt")
                     val item_thumb = item.select("img").attr("src")
-                    val item_summary = item.select("p.news").text()
+                    val item_summary = item.select(".lede").text()
 
-                    //arrayList 리스트에 추가해 준다.
+                    //arrayList 리스트에 추가
                     items.add(Item(item_title, item_link, item_thumb, item_summary))
                 }
 
 
                 this@newsActivity.runOnUiThread(java.lang.Runnable {
-                    //어답터 연결하기
+                    //어답터 연결
                     recyclerView.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
                     var adapter = MyAdapter(items, this)
                     recyclerView.adapter = adapter
                 })
             }).start()
     }
+
     }
+
+
+
     //테이터 객체(제목/기사링크/썸네일이미지)
     data class Item(val title: String, val link: String, val thumb: String, val summary: String)
 
