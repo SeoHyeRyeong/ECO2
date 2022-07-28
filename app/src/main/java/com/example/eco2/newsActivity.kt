@@ -56,7 +56,7 @@ class newsActivity : AppCompatActivity() {
                 val today = doc.getElementsByAttributeValue("class","list_body newsflash_body")
 
                 today.forEach { item ->
-                    val item_link = /*base_url +*/item.select("a").attr("href")
+                    val item_link = item.select("a").attr("href")
                     val item_title = item.select("img").attr("alt")
                     val item_thumb = item.select("img").attr("src")
                     val item_summary = item.select(".lede").text()
