@@ -28,6 +28,8 @@ class todoActivity : AppCompatActivity() {
     lateinit var listButton6: CheckBox
     lateinit var listButton7: CheckBox
 
+    lateinit var kgText: TextView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_to_do)
@@ -36,6 +38,8 @@ class todoActivity : AppCompatActivity() {
         newsBtn = findViewById(R.id.newsButton)
 
         dateText = findViewById(R.id.dateText)
+
+        kgText = findViewById(R.id.kgText)
 
         initialText = findViewById(R.id.initialText)
 
@@ -121,6 +125,54 @@ class todoActivity : AppCompatActivity() {
             }
 
         }
+
+        var result: Float = 0.0f
+        kgText.setText("${result}kg")
+
+        class CheckboxListener: CompoundButton.OnCheckedChangeListener{
+            override fun onCheckedChanged(buttonView: CompoundButton?, isChecked: Boolean) {
+                when(buttonView?.id) {
+                    R.id.listButton1 -> {
+                        if (isChecked) {
+                            result += 0.29f
+                        }
+                        else result -= 0.29f
+                    }
+
+                    R.id.listButton2 -> {
+                        if (isChecked) result += 0.31f
+                        else result -= 0.31f
+                    }
+
+                    R.id.listButton3 -> {
+                        if (isChecked) result += 0.24f
+                        else result -= 0.24f
+                    }
+
+                    R.id.listButton4 -> {
+                        if (isChecked) result += 0.46f
+                        else result -= 0.46f
+                    }
+
+                    R.id.listButton5 -> {
+                        if (isChecked) result += 0.26f
+                        else result -= 0.26f
+                    }
+
+                    R.id.listButton6 -> {
+                        if (isChecked) result += 0.13f
+                        else result -= 0.13f
+                    }
+
+                    R.id.listButton7 -> {
+                        if (isChecked) result += 0.04f
+                        else result -= 0.04f
+                    }
+                }
+            }
+
+        }
+
 
         //홈 화면 연결
         homeBtn.setOnClickListener{
