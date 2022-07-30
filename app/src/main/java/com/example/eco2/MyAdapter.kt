@@ -20,7 +20,6 @@ class MyAdapter(val items: ArrayList<newsActivity.Item>, context: Context) : Rec
     inner class ViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
 
          var tv_title: TextView = view.findViewById(R.id.tv_title)
-         var tv_summary: TextView = view.findViewById(R.id.tv_summary)
 
     }
 
@@ -36,14 +35,12 @@ class MyAdapter(val items: ArrayList<newsActivity.Item>, context: Context) : Rec
     }
 
     //position번째 데이터와 xml 연결
-    //질문- 왜
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.tv_title?.text = items.get(position).title
         val into = Glide.with(holder.view.context)
             .load(items.get(position).thumb)
             .fitCenter()
             .into(holder.view.findViewById(R.id.imageView))
-        holder.tv_summary.text = items.get(position).summary
 
         //Click Event
         holder.itemView.setOnClickListener {
@@ -52,6 +49,5 @@ class MyAdapter(val items: ArrayList<newsActivity.Item>, context: Context) : Rec
             startActivity(holder.view.context, openUrl, null)
         }
     }
-
 
 }
