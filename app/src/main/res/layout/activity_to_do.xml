@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".todoActivity">
 
-
     <ImageButton
         android:id="@+id/todoButton"
         android:layout_width="70dp"
@@ -51,29 +50,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginTop="24dp"
         android:text="날짜"
         android:textColor="@color/black"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/listButton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <android.widget.Button
-        android:id="@+id/listButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="32dp"
-        android:background="@color/color2"
-        android:padding="15dp"
-        android:text="+ 목록에서 선택하기"
-        android:textColor="@color/black"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -87,7 +68,161 @@
         app:layout_constraintBottom_toTopOf="@+id/homeButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/listButton"
-        app:layout_constraintVertical_bias="0.427" />
+        app:layout_constraintTop_toBottomOf="@+id/dateText"
+        app:layout_constraintVertical_bias="0.44" />
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="413dp"
+        android:layout_height="442dp"
+        android:layout_marginTop="72dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Spinner
+                android:id="@+id/listSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginTop="12dp"
+                android:background="@color/color2"
+                android:padding="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dateText"
+                tools:ignore="MissingConstraints,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+            <android.widget.CheckBox
+                android:id="@+id/listButton1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="32dp"
+                android:background="@color/color2"
+                android:button="@drawable/btn_check"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="개인 컵 사용하기  |  0.29kg"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/listSpinner" />
+
+            <android.widget.CheckBox
+                android:id="@+id/listButton2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/color2"
+                android:button="@drawable/btn_check"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="에코백 사용하기  |  0.31kg"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/listButton1" />
+
+            <android.widget.CheckBox
+                android:id="@+id/listButton3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/color2"
+                android:button="@drawable/btn_check"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="물 절약하기  |  0.24kg"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/listButton2" />
+
+            <android.widget.CheckBox
+                android:id="@+id/listButton4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/color2"
+                android:button="@drawable/btn_check"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="계단 이용하기  |  0.46kg"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/listButton3" />
+
+            <android.widget.CheckBox
+                android:id="@+id/listButton5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/color2"
+                android:button="@drawable/btn_check"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="가까운 거리는 도보 이용하기  |  0.26kg"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/listButton4" />
+
+            <android.widget.CheckBox
+                android:id="@+id/listButton6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/color2"
+                android:button="@drawable/btn_check"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="로컬푸드 구매하기  |  0.13kg"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/listButton5" />
+
+            <android.widget.CheckBox
+                android:id="@+id/listButton7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/color2"
+                android:button="@drawable/btn_check"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="불필요한 메일 10통 삭제  |  0.04kg"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/listButton6" />
+        </LinearLayout>
+
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

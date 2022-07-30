@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="lists">
+        <item>+ 목록에서 선택하기</item>
+        <item>개인 컵 사용하기  |  0.29kg</item>
+        <item>에코백 사용하기  |  0.31kg</item>
+        <item>물 절약하기  |  0.24kg</item>
+        <item>계단 이용하기  |  0.46kg</item>
+        <item>가까운 거리는 도보 이용하기  |  0.26kg</item>
+        <item>로컬푸드 구매하기  |  0.13kg</item>
+        <item>불필요한 메일 10통 삭제  |  0.04kg</item>
+    </string-array>
+</resources>

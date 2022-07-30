@@ -13,4 +13,8 @@
         <item name="android:fontFamily">@font/the</item>
     </style>
 
+    <style name="customCheckBoxFontStyle" parent="@style/Widget.AppCompat.CompoundButton.CheckBox">
+        <item name="android:fontFamily">@font/the</item>
+    </style>
+
 </resources>
