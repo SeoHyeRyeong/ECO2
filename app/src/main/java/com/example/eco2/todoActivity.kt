@@ -127,7 +127,7 @@ class todoActivity : AppCompatActivity() {
         }
 
         var result: Float = 0.0f
-        kgText.setText("${result}kg")
+        kgText.setText("${result}kg/co2")
 
         class CheckboxListener: CompoundButton.OnCheckedChangeListener{
             override fun onCheckedChanged(buttonView: CompoundButton?, isChecked: Boolean) {
@@ -170,7 +170,7 @@ class todoActivity : AppCompatActivity() {
                     }
 
                 }
-                kgText.setText("${String.format("%.2f", result)}kg")
+                kgText.setText("${String.format("%.2f", result)}kg/co2")
             }
 
         }
@@ -187,6 +187,8 @@ class todoActivity : AppCompatActivity() {
         //홈 화면 연결
         homeBtn.setOnClickListener{
             var intent = Intent(this, MainActivity::class.java)
+            //결과 값 전달
+            intent.putExtra("RESULT", result)
             startActivity(intent)
         }
         //뉴스 화면 연결

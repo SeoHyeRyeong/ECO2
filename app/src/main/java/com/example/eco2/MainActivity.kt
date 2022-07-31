@@ -18,6 +18,9 @@ class MainActivity : AppCompatActivity() {
 
     var countDownTimer: CountDownTimer? = null
     var tv_timer: TextView? = null
+
+    //탄소 배출 감소량 계산
+    lateinit var myCarbon_kg: TextView
     
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,6 +29,8 @@ class MainActivity : AppCompatActivity() {
         todoBtn = findViewById(R.id.todoButton)
         newsBtn = findViewById(R.id.newsButton)
         tv_timer = findViewById(R.id.tv_timer)
+
+        myCarbon_kg = findViewById(R.id.myCarbon_kg)
         
         todoBtn.setOnClickListener{
             var intent = Intent(this, todoActivity::class.java)
@@ -47,6 +52,10 @@ class MainActivity : AppCompatActivity() {
         }
         val count=countDownTimer
         count?.start()
+
+        //결과 값 받기
+        val result = intent.getFloatExtra("RESULT", 0.00f)
+        myCarbon_kg.setText("${String.format("%.2f", result)}kg/co2")
     }
 
 

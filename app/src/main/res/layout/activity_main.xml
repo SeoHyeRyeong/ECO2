@@ -97,7 +97,7 @@
         android:layout_marginBottom="40dp"
         android:background="@drawable/round_rectangle"
         android:gravity="center"
-        android:text="myCarbon kg/co2"
+        android:text="0.00kg/co2"
         android:textColor="#666A47"
         android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
