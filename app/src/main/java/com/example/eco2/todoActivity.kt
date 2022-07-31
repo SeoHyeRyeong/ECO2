@@ -168,10 +168,20 @@ class todoActivity : AppCompatActivity() {
                         if (isChecked) result += 0.04f
                         else result -= 0.04f
                     }
+
                 }
+                kgText.setText("${String.format("%.2f", result)}kg")
             }
 
         }
+
+        listButton1.setOnCheckedChangeListener(CheckboxListener())
+        listButton2.setOnCheckedChangeListener(CheckboxListener())
+        listButton3.setOnCheckedChangeListener(CheckboxListener())
+        listButton4.setOnCheckedChangeListener(CheckboxListener())
+        listButton5.setOnCheckedChangeListener(CheckboxListener())
+        listButton6.setOnCheckedChangeListener(CheckboxListener())
+        listButton7.setOnCheckedChangeListener(CheckboxListener())
 
 
         //홈 화면 연결
