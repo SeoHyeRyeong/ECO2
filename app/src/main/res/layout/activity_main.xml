@@ -52,9 +52,11 @@
     <TextView
         android:id="@+id/carbonClock"
         android:layout_width="wrap_content"
-        android:layout_height="520dp"
-        android:text="기후위기시계"
+        android:layout_height="100dp"
+        android:layout_marginBottom="450dp"
+        android:text="기후 위기 시계"
         android:textSize="30dp"
+        android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -62,10 +64,70 @@
 
     <TextView
         android:id="@+id/tv_timer"
-        android:layout_width="wrap_content"
-        android:layout_height="450dp"
+        android:layout_width="350dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="360dp"
+        android:background="@drawable/round_rectangle"
+        android:gravity="center"
         android:text="CarbonClock"
-        android:textSize="25dp"
+        android:textColor="#666A47"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/myCarbon"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:text="나의 탄소 배출 감소량"
+        android:layout_marginBottom="130dp"
+        android:textSize="30dp"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/myCarbon_kg"
+        android:layout_width="350dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/round_rectangle"
+        android:gravity="center"
+        android:text="myCarbon kg/co2"
+        android:textColor="#666A47"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/to_do"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:text="오늘의 To_do"
+        android:layout_marginBottom="-180dp"
+        android:textSize="30dp"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/add_to_do"
+        android:layout_width="350dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="-270dp"
+        android:background="@drawable/round_rectangle"
+        android:gravity="center"
+        android:text="오늘의 To_do가 없어요."
+        android:textColor="#666A47"
+        android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
