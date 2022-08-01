@@ -30,6 +30,8 @@ class todoActivity : AppCompatActivity() {
 
     lateinit var kgText: TextView
 
+//    var todoList : ArrayList<String> = arrayListOf()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_to_do)
@@ -140,32 +142,44 @@ class todoActivity : AppCompatActivity() {
                     }
 
                     R.id.listButton2 -> {
-                        if (isChecked) result += 0.31f
+                        if (isChecked) {
+                            result += 0.31f
+                        }
                         else result -= 0.31f
                     }
 
                     R.id.listButton3 -> {
-                        if (isChecked) result += 0.24f
+                        if (isChecked) {
+                            result += 0.24f
+                        }
                         else result -= 0.24f
                     }
 
                     R.id.listButton4 -> {
-                        if (isChecked) result += 0.46f
+                        if (isChecked) {
+                            result += 0.46f
+                        }
                         else result -= 0.46f
                     }
 
                     R.id.listButton5 -> {
-                        if (isChecked) result += 0.26f
+                        if (isChecked) {
+                            result += 0.26f
+                        }
                         else result -= 0.26f
                     }
 
                     R.id.listButton6 -> {
-                        if (isChecked) result += 0.13f
+                        if (isChecked) {
+                            result += 0.13f
+                        }
                         else result -= 0.13f
                     }
 
                     R.id.listButton7 -> {
-                        if (isChecked) result += 0.04f
+                        if (isChecked) {
+                            result += 0.04f
+                        }
                         else result -= 0.04f
                     }
 
@@ -184,11 +198,17 @@ class todoActivity : AppCompatActivity() {
         listButton7.setOnCheckedChangeListener(CheckboxListener())
 
 
+        var randomtodo:String = "제발 되게 해줘요"
         //홈 화면 연결
         homeBtn.setOnClickListener{
             var intent = Intent(this, MainActivity::class.java)
+            var pref = this.getPreferences(0)
+            var editor = pref.edit()
+
             //결과 값 전달
             intent.putExtra("RESULT", result)
+            editor.putString("KEY_TODO",randomtodo).apply()
+            intent.putExtra("randomTodo",randomtodo)
             startActivity(intent)
         }
         //뉴스 화면 연결
