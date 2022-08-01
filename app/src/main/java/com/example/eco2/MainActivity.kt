@@ -16,6 +16,8 @@ class MainActivity : AppCompatActivity() {
     lateinit var todoBtn: ImageButton
     lateinit var newsBtn: ImageButton
 
+    lateinit var add_to_do:TextView
+
     var countDownTimer: CountDownTimer? = null
     var tv_timer: TextView? = null
     
@@ -25,7 +27,10 @@ class MainActivity : AppCompatActivity() {
         
         todoBtn = findViewById(R.id.todoButton)
         newsBtn = findViewById(R.id.newsButton)
+
         tv_timer = findViewById(R.id.tv_timer)
+
+        add_to_do = findViewById(R.id.add_to_do)
         
         todoBtn.setOnClickListener{
             var intent = Intent(this, todoActivity::class.java)
@@ -47,6 +52,10 @@ class MainActivity : AppCompatActivity() {
         }
         val count=countDownTimer
         count?.start()
+
+        var intent  = Intent(this,todoActivity::class.java)
+        intent.putExtra("randomTodo","randomTodo")
+        add_to_do.text ="개인컵 사용하기"
     }
 
 
@@ -65,7 +74,6 @@ class MainActivity : AppCompatActivity() {
         val diffSec = (targetCal.timeInMillis - baseCal.timeInMillis) / 1000
         val diffDays = diffSec / (24 * 60 * 60)
         targetCal.add(Calendar.DAY_OF_MONTH, (-diffDays).toInt())
-        //val monthTime = Math.floor((diffSec-(3600*24*)).toDouble()).toInt()
         val dayTime = Math.floor((diffDays).toDouble()).toInt()
         val hourTime = Math.floor((diffSec / 3600-(dayTime*24)).toDouble()).toInt()
         val minTime = Math.floor(((diffSec - (3600 * 24 *dayTime)-(3600*hourTime)) / 60).toDouble()).toInt()
