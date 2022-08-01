@@ -6,9 +6,8 @@ import android.os.CountDownTimer
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import java.util.Calendar
-import java.util.Date
-import java.util.GregorianCalendar
+import java.util.*
+import kotlin.collections.ArrayList
 
 
 class MainActivity : AppCompatActivity() {
@@ -17,6 +16,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var newsBtn: ImageButton
 
     lateinit var add_to_do:TextView
+    var todoList:ArrayList<String> = arrayListOf()
 
     var countDownTimer: CountDownTimer? = null
     var tv_timer: TextView? = null
@@ -62,9 +62,17 @@ class MainActivity : AppCompatActivity() {
         val result = intent.getFloatExtra("RESULT", 0.00f)
         myCarbon_kg.setText("${String.format("%.2f", result)}kg/co2")
 
-        var intent  = Intent(this,todoActivity::class.java)
-        intent.putExtra("randomTodo","randomTodo")
-        add_to_do.text ="개인컵 사용하기"
+
+        todoList.add("개인 컵 사용하기  |  0.29kg")
+        todoList.add("에코백 사용하기  |  0.31kg")
+        todoList.add("물 절약하기  |  0.24k")
+        todoList.add("계단 이용하기  |  0.46kg")
+        todoList.add("가까운 거리는 도보 이용하기  |  0.26kg")
+        todoList.add("로컬푸드 구매하기  |  0.13kg")
+        todoList.add("불필요한 메일 10통 삭제  |  0.04kg")
+        val random = Random()
+        val randomNum = random.nextInt(6)
+        add_to_do.text =todoList[randomNum]
     }
 
 
