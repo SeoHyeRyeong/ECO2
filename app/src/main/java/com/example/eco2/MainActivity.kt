@@ -74,7 +74,7 @@ class MainActivity : AppCompatActivity() {
         val hour = String.format("%02d", hourTime)
         val min = String.format("%02d", minTime)
         val sec = String.format("%02d", secTime)
-        return "1.5℃ 오르기까지\n" + day + "일 " + hour + "시간 " + min + "분 " + sec + "초 남았습니다."
+        return "지구 온도가 1.5℃ 오르기까지\n" + day + "일 " +  hour + " : " + min + " : " + sec
     }
 
 }
